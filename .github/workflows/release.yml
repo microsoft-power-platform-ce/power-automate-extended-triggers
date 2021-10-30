@@ -21,9 +21,9 @@ jobs:
           $versionNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
           $version = $versionNode.InnerText
           $underscoredVersion = $version.Replace(".", "_")
-          $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion"
+          $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion.zip"
           Write-Host "Solution file name: $fileName"
-          Write-Host "::set-output name=$fileName"
+          Write-Host "::set-output name=name::$fileName"
         shell:
           pwsh
       - name: Pack solution
