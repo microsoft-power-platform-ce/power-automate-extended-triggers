@@ -1,0 +1,13 @@
+<catalog uniquename="mppce_Common">
+  <description default="Common messages">
+    <label description="Common messages" languagecode="1033" />
+  </description>
+  <displayname default="Common">
+    <label description="Common" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Common</name>
+  <parentcatalogid>
+    <uniquename>mppce_PowerAutomateExtendedTriggers</uniquename>
+  </parentcatalogid>
+</catalog>

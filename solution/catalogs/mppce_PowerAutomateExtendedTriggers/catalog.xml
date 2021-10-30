@@ -1,0 +1,10 @@
+<catalog uniquename="mppce_PowerAutomateExtendedTriggers">
+  <description default="Set of extended triggers for common Dataverse operations.">
+    <label description="Set of extended triggers for common Dataverse operations." languagecode="1033" />
+  </description>
+  <displayname default="Power Automate Extended Triggers">
+    <label description="Power Automate Extended Triggers" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Power Automate Extended Triggers</name>
+</catalog>

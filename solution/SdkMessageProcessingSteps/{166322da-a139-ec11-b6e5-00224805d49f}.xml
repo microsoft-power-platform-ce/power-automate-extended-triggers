@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Mppce.PowerAutomateExtendedTriggers.Plugins.OnAssociateDisassociate: Disassociate of any Entity" SdkMessageProcessingStepId="{166322da-a139-ec11-b6e5-00224805d49f}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>bdfc191d-fc56-493a-a6b1-cb0c47a22ecc</SdkMessageId>
+  <PluginTypeName>Mppce.PowerAutomateExtendedTriggers.Plugins.OnAssociateDisassociate, Mppce.PowerAutomateExtendedTriggers.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ead451b397d8f1f9</PluginTypeName>
+  <PluginTypeId>287ed02f-59be-4d49-850c-1e7543d9f748</PluginTypeId>
+  <AsyncAutoDelete>1</AsyncAutoDelete>
+  <Description>Mppce.PowerAutomateExtendedTriggers.Plugins.OnAssociateDisassociate: Disassociate of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

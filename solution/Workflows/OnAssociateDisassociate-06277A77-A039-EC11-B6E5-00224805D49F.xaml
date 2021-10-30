@@ -1,0 +1,50 @@
+<Activity x:Class="XrmWorkflow06277a77a039ec11b6e500224805d49f" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxs="clr-namespace:Microsoft.Xrm.Sdk;assembly=Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxsw="clr-namespace:Microsoft.Xrm.Sdk.Workflow;assembly=Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxswa="clr-namespace:Microsoft.Xrm.Sdk.Workflow.Activities;assembly=Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:this="clr-namespace:" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="InputEntities" Type="InArgument(scg:IDictionary(x:String, mxs:Entity))" />
+    <x:Property Name="CreatedEntities" Type="InArgument(scg:IDictionary(x:String, mxs:Entity))" />
+    <x:Property Name="Message" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <mxsw:ArgumentRequiredAttribute Value="True" />
+        <mxsw:ArgumentTargetAttribute Value="False" />
+        <mxsw:ArgumentDescriptionAttribute Value="&quot;Associate&quot; or &quot;Disassociate&quot;" />
+        <mxsw:ArgumentDirectionAttribute Value="Input" />
+        <mxsw:ArgumentEntityAttribute Value="" />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="Relationship" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <mxsw:ArgumentRequiredAttribute Value="True" />
+        <mxsw:ArgumentTargetAttribute Value="False" />
+        <mxsw:ArgumentDescriptionAttribute Value="Schema name of the relationship under which records were associated / disassociated." />
+        <mxsw:ArgumentDirectionAttribute Value="Input" />
+        <mxsw:ArgumentEntityAttribute Value="" />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="Entity1" Type="InArgument(mxs:EntityReference)">
+      <x:Property.Attributes>
+        <mxsw:ArgumentRequiredAttribute Value="True" />
+        <mxsw:ArgumentTargetAttribute Value="False" />
+        <mxsw:ArgumentDescriptionAttribute Value="&quot;Target&quot; parameter of the Associate / Disassociate request." />
+        <mxsw:ArgumentDirectionAttribute Value="Input" />
+        <mxsw:ArgumentEntityAttribute Value="" />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="Entity2" Type="InArgument(mxs:EntityReference)">
+      <x:Property.Attributes>
+        <mxsw:ArgumentRequiredAttribute Value="True" />
+        <mxsw:ArgumentTargetAttribute Value="False" />
+        <mxsw:ArgumentDescriptionAttribute Value="&quot;RelatedEntities&quot; parameter of the Associate / Disassociate request (one request of this action will be triggered for each related entity)." />
+        <mxsw:ArgumentDirectionAttribute Value="Input" />
+        <mxsw:ArgumentEntityAttribute Value="" />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <this:XrmWorkflow06277a77a039ec11b6e500224805d49f.InputEntities>
+    <InArgument x:TypeArguments="scg:IDictionary(x:String, mxs:Entity)" />
+  </this:XrmWorkflow06277a77a039ec11b6e500224805d49f.InputEntities>
+  <this:XrmWorkflow06277a77a039ec11b6e500224805d49f.CreatedEntities>
+    <InArgument x:TypeArguments="scg:IDictionary(x:String, mxs:Entity)" />
+  </this:XrmWorkflow06277a77a039ec11b6e500224805d49f.CreatedEntities>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <mxswa:Workflow />
+</Activity>

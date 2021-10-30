@@ -1,0 +1,6 @@
+<catalogassignments>
+  <catalogassignment catalogid.uniquename="mppce_Common" object.workflowid="06277a77-a039-ec11-b6e5-00224805d49f" objectidtype="workflow">
+    <iscustomizable>1</iscustomizable>
+    <name>On Associate / Disassociate (Common)</name>
+  </catalogassignment>
+</catalogassignments>
