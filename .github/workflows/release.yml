@@ -1,15 +1,14 @@
 on:
   push:
-#    tags:
-#      - "v*"
+#  tags:
+#    - "v*"
 
 name: Create Release
 
 jobs:
   build:
-    env:
-      BASE: ${{ github.workspace }}
     name: Build Solution
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -24,13 +23,14 @@ jobs:
           $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion.zip"
           Write-Host "Solution file name: $fileName"
           Write-Host "::set-output name=name::$fileName"
-        shell:
-          pwsh
-      - name: Pack solution
-        uses: microsoft/powerplatform-actions/pack-solution@v0
-        with:
-          map: map.xml
-          solution-file: ${{ steps.get-solution-file-name.outputs.name }}
-          solution-folder: solution
-          solution-type: Both
-    runs-on: ubuntu-latest
+        shell: pwsh
+      - env:
+          BASE: ${{ github.workspace }}
+          ZIP_FILE: ${{ steps.get-solution-file-name.outputs.name }}
+        name: Pack solution
+        run: >
+          npx pac-wrap solution pack
+            --zipfile $ZIP_FILE
+            --folder solution
+            --packagetype Both
+            --map map.xml
