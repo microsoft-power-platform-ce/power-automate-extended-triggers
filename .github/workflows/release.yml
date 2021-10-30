@@ -56,3 +56,8 @@ jobs:
             --folder solution \
             --packagetype Both \
             --map map.xml
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: packed-solution
+          path: *.zip
