@@ -47,7 +47,7 @@ jobs:
           Write-Host "::set-output name=name::$fileName"
         shell: pwsh
       - env:
-          PLUGINS_PATH: compiled-plugins/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
+          PLUGINS_PATH: ${{ github.workspace }}/compiled-plugins/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
           ZIP_FILE: ${{ steps.get-solution-file-name.outputs.name }}
         name: Pack solution
         run: |
