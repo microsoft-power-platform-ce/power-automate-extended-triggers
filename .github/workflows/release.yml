@@ -12,10 +12,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build
-        run: |
-          dotnet restore ./Plugins
-          dotnet build ./Plugins/Plugins.sln --configuration Release --no-restore
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.3
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+      - name: Restore packages
+        run: nuget restore Plugins/Plugins.sln
+      - name: Build project
+        run: msbuild ./Plugins/Plugins.sln /p:Configuration=Release
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
