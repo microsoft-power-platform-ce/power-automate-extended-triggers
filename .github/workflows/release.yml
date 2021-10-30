@@ -10,7 +10,7 @@ jobs:
     name: Build plugins
     runs-on: windows-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.3
@@ -25,12 +25,13 @@ jobs:
         with:
           name: compiled-plugins
           path: Plugins/bin/Release/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
+
   pack-solution:
     name: Pack solution
     needs: build-plugins
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
       - name: Download plugins
         uses: actions/download-artifact@v2
@@ -61,3 +62,18 @@ jobs:
         with:
           name: packed-solution
           path: "*.zip"
+
+  create-release:
+    # if: startsWith(github.ref, "refs/tags")
+    name: Create release
+    needs: pack-solution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download solution
+        uses: actions/download-artifact@v2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: packed-solution/*
