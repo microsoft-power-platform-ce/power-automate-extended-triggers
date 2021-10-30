@@ -28,9 +28,9 @@ jobs:
           BASE: ${{ github.workspace }}
           ZIP_FILE: ${{ steps.get-solution-file-name.outputs.name }}
         name: Pack solution
-        run: >
-          npx pac-wrap solution pack
-            --zipfile $ZIP_FILE
-            --folder solution
-            --packagetype Both
+        run: |
+          npx pac-wrap solution pack \
+            --zipfile $ZIP_FILE \
+            --folder solution \
+            --packagetype Both \
             --map map.xml
