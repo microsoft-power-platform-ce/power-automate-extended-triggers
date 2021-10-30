@@ -1,0 +1,77 @@
+on:
+  push:
+
+name: Create Release
+
+jobs:
+  build-plugins:
+    name: Build plugins
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.3
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+      - name: Restore packages
+        run: nuget restore Plugins/Plugins.sln
+      - name: Build project
+        run: msbuild ./Plugins/Plugins.sln /p:Configuration=Release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-plugins
+          path: Plugins/bin/Release/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
+
+  pack-solution:
+    name: Pack solution
+    needs: build-plugins
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download plugins
+        uses: actions/download-artifact@v2
+      - id: get-solution-file-name
+        name: Get solution file name
+        run: |
+          $xml = New-Object xml
+          $xml.Load("./solution/Other/Solution.xml")
+          $versionNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
+          $version = $versionNode.InnerText
+          $underscoredVersion = $version.Replace(".", "_")
+          $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion.zip"
+          Write-Host "Solution file name: $fileName"
+          Write-Host "::set-output name=name::$fileName"
+        shell: pwsh
+      - env:
+          PLUGINS_PATH: ${{ github.workspace }}/compiled-plugins/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
+          ZIP_FILE: ${{ steps.get-solution-file-name.outputs.name }}
+        name: Pack solution
+        run: |
+          npx pac-wrap solution pack \
+            --zipfile $ZIP_FILE \
+            --folder solution \
+            --packagetype Both \
+            --map map.xml
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: packed-solution
+          path: "*.zip"
+
+  create-release:
+    if: startsWith(github.ref, 'refs/tags')
+    name: Create release
+    needs: pack-solution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download solution
+        uses: actions/download-artifact@v2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: packed-solution/*
