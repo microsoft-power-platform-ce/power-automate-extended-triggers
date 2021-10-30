@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Mapping>
-    <FileToFile map="MppcePowerAutomateExtendedTriggersPlugins.dll" to="%BASE%\Plugins\bin\**\Mppce.PowerAutomateExtendedTriggers.Plugins.dll" />
+    <FileToFile map="MppcePowerAutomateExtendedTriggersPlugins.dll" to="%BASE%/Plugins/bin/**/Mppce.PowerAutomateExtendedTriggers.Plugins.dll" />
 </Mapping>

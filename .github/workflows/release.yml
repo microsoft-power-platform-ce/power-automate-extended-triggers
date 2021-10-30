@@ -1,0 +1,36 @@
+on:
+  push:
+#    tags:
+#      - "v*"
+
+name: Create Release
+
+jobs:
+  build:
+    env:
+      BASE: ${{ github.workspace }}
+    name: Build Solution
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - id: get-solution-file-name
+        name: Get solution file name
+        run: |
+          $xml = New-Object xml
+          $xml.Load("./solution/Other/Solution.xml")
+          $versionNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
+          $version = $versionNode.InnerText
+          $underscoredVersion = $version.Replace(".", "_")
+          $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion"
+          Write-Host "Solution file name: $fileName"
+          Write-Host "::set-output name=$fileName"
+        shell:
+          pwsh
+      - name: Pack solution
+        uses: microsoft/powerplatform-actions/pack-solution@v0
+        with:
+          map: map.xml
+          solution-file: ${{ steps.get-solution-file-name.outputs.name }}
+          solution-folder: solution
+          solution-type: Both
+    runs-on: ubuntu-latest
