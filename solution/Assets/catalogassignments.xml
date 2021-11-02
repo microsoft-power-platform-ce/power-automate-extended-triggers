@@ -3,4 +3,8 @@
     <iscustomizable>1</iscustomizable>
     <name>On Associate / Disassociate (Common)</name>
   </catalogassignment>
+  <catalogassignment catalogid.uniquename="mppce_Common" object.workflowid="38a7749a-943b-ec11-b6e5-002248082aaa" objectidtype="workflow">
+    <iscustomizable>1</iscustomizable>
+    <name>On Publish (Common)</name>
+  </catalogassignment>
 </catalogassignments>

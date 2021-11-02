@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="IServiceProviderExtensions.cs" />
     <Compile Include="OnAssociateDisassociate.cs" />
+    <Compile Include="OnPublish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
