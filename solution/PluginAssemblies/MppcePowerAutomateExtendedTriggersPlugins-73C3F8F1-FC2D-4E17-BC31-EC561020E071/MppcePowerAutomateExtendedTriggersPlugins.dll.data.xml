@@ -8,5 +8,8 @@
     <PluginType AssemblyQualifiedName="Mppce.PowerAutomateExtendedTriggers.Plugins.OnAssociateDisassociate, Mppce.PowerAutomateExtendedTriggers.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ead451b397d8f1f9" PluginTypeId="287ed02f-59be-4d49-850c-1e7543d9f748" Name="Mppce.PowerAutomateExtendedTriggers.Plugins.OnAssociateDisassociate">
       <FriendlyName>bc1ca0cf-9b97-4bb4-aebe-f6df1bcf20f2</FriendlyName>
     </PluginType>
+    <PluginType AssemblyQualifiedName="Mppce.PowerAutomateExtendedTriggers.Plugins.OnPublish, Mppce.PowerAutomateExtendedTriggers.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ead451b397d8f1f9" PluginTypeId="6d64f878-aaab-4528-a06b-85de8310bea1" Name="Mppce.PowerAutomateExtendedTriggers.Plugins.OnPublish">
+      <FriendlyName>3af30b11-9257-4caa-8e34-9d2bfdeca080</FriendlyName>
+    </PluginType>
   </PluginTypes>
 </PluginAssembly>
