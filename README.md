@@ -26,3 +26,13 @@ You can configure your trigger to only fire for a specific message or relationsh
 ```
 @equals(triggerBody().InputParameters.Relationship, '<relationship schema name>')
 ```
+
+### On Publish
+
+This action triggers whenever customizations are published.
+
+![Screenshot demonstrating an example usage of this action. The trigger is "When an action is performed (preview)." Catalog is "Power Automate Extended Triggers." Category is "Common." Table is "(none)." Action name is "mppce_OnPublish."](./resources/on-publish.png)
+
+#### Inputs
+
+- **Message:** Either "Publish" or "PublishAll"
