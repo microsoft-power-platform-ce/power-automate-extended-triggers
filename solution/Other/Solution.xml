@@ -6,7 +6,7 @@
       <LocalizedName description="Power Automate Extended Triggers" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.1.0</Version>
+    <Version>1.0.1.1</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>microsoft_power_platform_customer_engineers</UniqueName>
@@ -82,7 +82,9 @@
       <RootComponent type="29" id="{38a7749a-943b-ec11-b6e5-002248082aaa}" behavior="0" />
       <RootComponent type="91" id="{73c3f8f1-fc2d-4e17-bc31-ec561020e071}" schemaName="Mppce.PowerAutomateExtendedTriggers.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ead451b397d8f1f9" behavior="0" />
       <RootComponent type="92" id="{166322da-a139-ec11-b6e5-00224805d49f}" behavior="0" />
+      <RootComponent type="92" id="{398dc4f8-923b-ec11-b6e5-00224805d49f}" behavior="0" />
       <RootComponent type="92" id="{aad47bd2-a139-ec11-b6e5-00224805d49f}" behavior="0" />
+      <RootComponent type="92" id="{b08fdd02-933b-ec11-b6e5-00224805d49f}" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>

@@ -6,7 +6,7 @@
       <x:Property.Attributes>
         <mxsw:ArgumentRequiredAttribute Value="True" />
         <mxsw:ArgumentTargetAttribute Value="False" />
-        <mxsw:ArgumentDescriptionAttribute Value="&quot;Publish&quot; or &quot;PublishAll&quot;" />
+        <mxsw:ArgumentDescriptionAttribute Value="Publish&quot; or &quot;PublishAll&quot;" />
         <mxsw:ArgumentDirectionAttribute Value="Input" />
         <mxsw:ArgumentEntityAttribute Value="" />
       </x:Property.Attributes>

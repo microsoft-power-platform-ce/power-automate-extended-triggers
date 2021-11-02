@@ -6,7 +6,7 @@
       <x:Property.Attributes>
         <mxsw:ArgumentRequiredAttribute Value="True" />
         <mxsw:ArgumentTargetAttribute Value="False" />
-        <mxsw:ArgumentDescriptionAttribute Value="&quot;Associate&quot; or &quot;Disassociate&quot;" />
+        <mxsw:ArgumentDescriptionAttribute Value="Associate&quot; or &quot;Disassociate&quot;" />
         <mxsw:ArgumentDirectionAttribute Value="Input" />
         <mxsw:ArgumentEntityAttribute Value="" />
       </x:Property.Attributes>
@@ -24,7 +24,7 @@
       <x:Property.Attributes>
         <mxsw:ArgumentRequiredAttribute Value="True" />
         <mxsw:ArgumentTargetAttribute Value="False" />
-        <mxsw:ArgumentDescriptionAttribute Value="&quot;Target&quot; parameter of the Associate / Disassociate request." />
+        <mxsw:ArgumentDescriptionAttribute Value="Target&quot; parameter of the Associate / Disassociate request." />
         <mxsw:ArgumentDirectionAttribute Value="Input" />
         <mxsw:ArgumentEntityAttribute Value="" />
       </x:Property.Attributes>
@@ -33,7 +33,7 @@
       <x:Property.Attributes>
         <mxsw:ArgumentRequiredAttribute Value="True" />
         <mxsw:ArgumentTargetAttribute Value="False" />
-        <mxsw:ArgumentDescriptionAttribute Value="&quot;RelatedEntities&quot; parameter of the Associate / Disassociate request (one request of this action will be triggered for each related entity)." />
+        <mxsw:ArgumentDescriptionAttribute Value="RelatedEntities&quot; parameter of the Associate / Disassociate request (one request of this action will be triggered for each related entity)." />
         <mxsw:ArgumentDirectionAttribute Value="Input" />
         <mxsw:ArgumentEntityAttribute Value="" />
       </x:Property.Attributes>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Mppce.PowerAutomateExtendedTriggers.Plugins.OnPublish: PublishAll of any Entity" SdkMessageProcessingStepId="{b08fdd02-933b-ec11-b6e5-00224805d49f}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>debdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>Mppce.PowerAutomateExtendedTriggers.Plugins.OnPublish, Mppce.PowerAutomateExtendedTriggers.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ead451b397d8f1f9</PluginTypeName>
+  <PluginTypeId>6d64f878-aaab-4528-a06b-85de8310bea1</PluginTypeId>
+  <AsyncAutoDelete>1</AsyncAutoDelete>
+  <Description>Mppce.PowerAutomateExtendedTriggers.Plugins.OnPublish: PublishAll of any Entity</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>
