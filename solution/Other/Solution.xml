@@ -6,7 +6,7 @@
       <LocalizedName description="Power Automate Extended Triggers" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.1.1</Version>
+    <Version>1.0.2.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>microsoft_power_platform_customer_engineers</UniqueName>

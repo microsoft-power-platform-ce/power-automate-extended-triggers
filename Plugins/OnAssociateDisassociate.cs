@@ -21,14 +21,25 @@ namespace Mppce.PowerAutomateExtendedTriggers.Plugins
 
             foreach (var relatedEntity in relatedEntities)
             {
-                var request = new OrganizationRequest($"mppce_OnAssociateDisassociate");
-                request["Message"] = message;
-                request["Relationship"] = relationship.SchemaName;
-                request["Entity1"] = target;
-                request["Entity2"] = relatedEntity;
-
-                service.Execute(request);
+                CallAction(service, message, relationship.SchemaName, relatedEntity, target);
+                CallAction(service, message, relationship.SchemaName, target, relatedEntity);
             }
+        }
+
+        private void CallAction(
+            IOrganizationService service,
+            string message,
+            string relationship,
+            EntityReference entity1,
+            EntityReference entity2
+        ) {
+            var request = new OrganizationRequest($"mppce_OnAssociateDisassociate");
+            request["Message"] = message;
+            request["Relationship"] = relationship;
+            request["Entity1"] = entity1;
+            request["Entity2"] = entity2;
+
+            service.Execute(request);
         }
     }
 }
