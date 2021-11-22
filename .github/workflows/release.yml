@@ -39,10 +39,12 @@ jobs:
         run: |
           $xml = New-Object xml
           $xml.Load("./solution/Other/Solution.xml")
+          $uniqueNameNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
+          $uniqueName = $uniqueNameNode.InnerText
           $versionNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
           $version = $versionNode.InnerText
           $underscoredVersion = $version.Replace(".", "_")
-          $fileName = "PowerAutomateExtendedTriggers_$underscoredVersion.zip"
+          $fileName = "$($uniqueName)_$underscoredVersion.zip"
           Write-Host "Solution file name: $fileName"
           Write-Host "::set-output name=name::$fileName"
         shell: pwsh
