@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ImportExportXml version="9.2.21094.144" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
-    <UniqueName>PowerAutomateExtendedTriggers</UniqueName>
+    <UniqueName>mppce_power_automate_extended_triggers</UniqueName>
     <LocalizedNames>
       <LocalizedName description="Power Automate Extended Triggers" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.2.0</Version>
+    <Version>1.0.3.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>microsoft_power_platform_customer_engineers</UniqueName>
