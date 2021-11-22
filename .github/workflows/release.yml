@@ -1,7 +1,7 @@
 on:
   push:
 
-name: Create Release
+name: Create Release / Publish Package
 
 jobs:
   build-plugins:
@@ -23,9 +23,8 @@ jobs:
         with:
           name: compiled-plugins
           path: Plugins/bin/Release/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
-
   pack-solution:
-    name: Pack solution
+    name: Pack solution, create release, and publish package
     needs: build-plugins
     runs-on: ubuntu-latest
     steps:
@@ -45,22 +44,20 @@ jobs:
           Write-Host "Solution file name: $fileName"
           Write-Host "::set-output name=name::$fileName"
         shell: pwsh
-      - env:
-          PLUGINS_PATH: ${{ github.workspace }}/compiled-plugins/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
-          ZIP_FILE: ${{ steps.get-solution-file-name.outputs.name }}
-        name: Pack solution
+      - name: Pack solution
         run: |
           npx pac-wrap solution pack \
-            --zipfile $ZIP_FILE \
+            --zipfile solution.zip \
             --folder solution \
-            --packagetype Both \
+            --packagetype Managed \
             --map map.xml
+        env:
+          PLUGINS_PATH: ${{ github.workspace }}/compiled-plugins/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: packed-solution
-          path: "*.zip"
-
+          path: solution.zip
   create-release:
     if: startsWith(github.ref, 'refs/tags')
     name: Create release
@@ -71,6 +68,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Download solution
         uses: actions/download-artifact@v2
+      - name: Rename solution file
+        run: mv packed-solution/solution.zip $SOLUTION_FILE_NAME
+        env:
+          SOLUTION_FILE_NAME: ${{ jobs.pack-solution.steps.get-solution-file-name.outputs.name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:

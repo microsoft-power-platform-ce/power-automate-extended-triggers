@@ -1,0 +1,14 @@
+{
+  "name": "@microsoft-power-platform-ce/power-automate-extended-triggers",
+  "version": "1.0.3",
+  "description": "A collection of custom actions to effectively extend the available triggers for the [Microsoft Dataverse Connector](https://docs.microsoft.com/en-us/connectors/commondataserviceforapps/) for Power Automate.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft-power-platform-ce/power-automate-extended-triggers.git"
+  },
+  "author": "Melody Universe",
+  "license": "ISC",
+  "files": [
+    "solution.zip"
+  ]
+}

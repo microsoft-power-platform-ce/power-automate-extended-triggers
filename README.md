@@ -27,6 +27,10 @@ You can configure your trigger to only fire for a specific message or relationsh
 @equals(triggerBody().InputParameters.Relationship, '<relationship schema name>')
 ```
 
+#### Mirrored Execution
+
+This action will be called twice for each associate / disassociate request, swapping the Entity1 and Entity2 input parameters for each call.
+
 ### On Publish
 
 This action triggers whenever customizations are published.
