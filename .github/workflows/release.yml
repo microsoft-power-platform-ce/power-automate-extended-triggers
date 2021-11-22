@@ -24,7 +24,7 @@ jobs:
           name: compiled-plugins
           path: Plugins/bin/Release/Mppce.PowerAutomateExtendedTriggers.Plugins.dll
   pack-solution:
-    name: Pack solution, create release, and publish package
+    name: Pack solution
     needs: build-plugins
     runs-on: ubuntu-latest
     steps:
@@ -69,10 +69,10 @@ jobs:
       - name: Download solution
         uses: actions/download-artifact@v2
       - name: Rename solution file
-        run: mv packed-solution/solution.zip $SOLUTION_FILE_NAME
+        run: mv ${{ github.workspace }}/packed-solution/solution.zip ./$SOLUTION_FILE_NAME
         env:
           SOLUTION_FILE_NAME: ${{ needs.pack-solution.steps.get-solution-file-name.outputs.name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: packed-solution/*
+          files: ${{ needs.pack-solution.steps.get-solution-file-name.outputs.name }}
