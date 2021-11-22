@@ -26,6 +26,8 @@ jobs:
   pack-solution:
     name: Pack solution
     needs: build-plugins
+    outputs:
+      solution-file-name: ${{ steps.get-solution-file-name.outputs.name }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -71,7 +73,7 @@ jobs:
       - name: Rename solution file
         run: mv ${{ github.workspace }}/packed-solution/solution.zip ./$SOLUTION_FILE_NAME
         env:
-          SOLUTION_FILE_NAME: ${{ needs.pack-solution.steps.get-solution-file-name.outputs.name }}
+          SOLUTION_FILE_NAME: ${{ needs.pack-solution.outputs.solution-file-name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
