@@ -71,12 +71,10 @@ jobs:
       - name: Download solution
         uses: actions/download-artifact@v2
       - name: Rename solution file
-        run: |
-          mv ${{ github.workspace }}/packed-solution/solution.zip ./$SOLUTION_FILE_NAME
-          ls -R
+        run: mv ${{ github.workspace }}/packed-solution/solution.zip ./$SOLUTION_FILE_NAME
         env:
           SOLUTION_FILE_NAME: ${{ needs.pack-solution.outputs.solution-file-name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ needs.pack-solution.steps.get-solution-file-name.outputs.name }}
+          files: ${{ needs.pack-solution.outputs.solution-file-name }}
