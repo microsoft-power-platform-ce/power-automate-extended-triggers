@@ -39,7 +39,7 @@ jobs:
         run: |
           $xml = New-Object xml
           $xml.Load("./solution/Other/Solution.xml")
-          $uniqueNameNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
+          $uniqueNameNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/UniqueName")
           $uniqueName = $uniqueNameNode.InnerText
           $versionNode = $xml.SelectSingleNode("/ImportExportXml/SolutionManifest/Version")
           $version = $versionNode.InnerText
