@@ -71,7 +71,7 @@ jobs:
       - name: Rename solution file
         run: mv packed-solution/solution.zip $SOLUTION_FILE_NAME
         env:
-          SOLUTION_FILE_NAME: ${{ jobs.pack-solution.steps.get-solution-file-name.outputs.name }}
+          SOLUTION_FILE_NAME: ${{ needs.pack-solution.steps.get-solution-file-name.outputs.name }}
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
